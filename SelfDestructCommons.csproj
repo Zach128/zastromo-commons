@@ -47,8 +47,10 @@
     <Compile Include="Model\GraphicsMessages\BackgroundCtrlMsg.cs" />
     <Compile Include="Model\GraphicsMessages\BkgDrawRect.cs" />
     <Compile Include="Model\GraphicsMessages\BkgFillColor.cs" />
-    <Compile Include="SDPipeServer.cs" />
+    <Compile Include="Model\GraphicsMessages\BkgResponse.cs" />
+    <Compile Include="Pipes\SDPipeClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Pipes\SDPipeServer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

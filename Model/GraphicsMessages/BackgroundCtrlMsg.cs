@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SelfDestructCommons.Model.BackgroundMessages
+namespace SelfDestructCommons.Model.GraphicsMessages
 {
 
     [Serializable]
@@ -15,6 +15,9 @@ namespace SelfDestructCommons.Model.BackgroundMessages
         FILL_COLOR
     }
 
+    /// <summary>
+    /// A base class defining a pipe message structure which consists of a self-identifying message type and empty string array of arguments.
+    /// </summary>
     [Serializable]
     abstract class BackgroundCtrlMsg
     {
@@ -25,6 +28,7 @@ namespace SelfDestructCommons.Model.BackgroundMessages
         public BackgroundCtrlMsg(BKG_ACTION action)
         {
             BkgAction = action;
+            Args = new string[] { };
         }
 
     }
