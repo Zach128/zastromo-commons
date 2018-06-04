@@ -17,7 +17,7 @@ namespace SelfDestructCommons.Model.GraphicsMessages
         NO_RESPONSE
     }
 
-    class BkgResponse : BackgroundCtrlMsg
+    public class BkgResponse : BackgroundCtrlMsg
     {
 
         public BKG_RESPONSE Code {get; set;}

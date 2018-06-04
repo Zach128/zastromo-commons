@@ -19,7 +19,7 @@ namespace SelfDestructCommons.Model.GraphicsMessages
     /// A base class defining a pipe message structure which consists of a self-identifying message type and empty string array of arguments.
     /// </summary>
     [Serializable]
-    abstract class BackgroundCtrlMsg
+    public abstract class BackgroundCtrlMsg
     {
 
         public readonly BKG_ACTION BkgAction;
