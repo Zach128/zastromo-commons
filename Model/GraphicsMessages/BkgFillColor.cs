@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SelfDestructCommons.Model.BackgroundMessages
+namespace SelfDestructCommons.Model.GraphicsMessages
 {
     [Serializable]
     class BkgFillColor : BackgroundCtrlMsg
