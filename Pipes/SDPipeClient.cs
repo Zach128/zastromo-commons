@@ -70,5 +70,15 @@ namespace SelfDestructCommons
             client.PushMessage(message);
         }
 
+        public void WaitForConnection()
+        {
+            client.WaitForConnection();
+        }
+
+        public void WaitForDisconnection()
+        {
+            client.WaitForDisconnection();
+        }
+
     }
 }

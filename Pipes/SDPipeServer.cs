@@ -20,7 +20,7 @@ namespace SelfDestructCommons
 
         private NamedPipeServer<BackgroundCtrlMsg> server;
 
-        private readonly Dictionary<int, CLIENT_TYPE> clients;
+        public readonly Dictionary<int, CLIENT_TYPE> clients;
 
 
         public SDPipeServer(string serverName)
@@ -38,7 +38,8 @@ namespace SelfDestructCommons
             server.ClientMessage += delegate (NamedPipeConnection<BackgroundCtrlMsg, BackgroundCtrlMsg> conn, BackgroundCtrlMsg message)
             {
                 //TODO: Add server handling code
-                ProcessMessage(conn.Id, message);
+                BkgResponse response = ProcessMessage(conn.Id, message);
+
             };
 
             server.ClientDisconnected += delegate (NamedPipeConnection<BackgroundCtrlMsg, BackgroundCtrlMsg> conn)
@@ -47,6 +48,11 @@ namespace SelfDestructCommons
                 //Client removal code
                 clients.Remove(conn.Id);
             };
+        }
+
+        public void SendObject(BackgroundCtrlMsg message)
+        {
+            server.PushMessage(message);
         }
 
         /// <summary>

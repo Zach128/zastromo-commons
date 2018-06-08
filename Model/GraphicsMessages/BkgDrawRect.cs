@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace SelfDestructCommons.Model.GraphicsMessages
 {
     [Serializable]
-    class BkgDrawRect : BackgroundCtrlMsg
+    public class BkgDrawRect : BackgroundCtrlMsg
     {
         public BkgDrawRect() : base(BKG_ACTION.NO_ACTION) 
         {

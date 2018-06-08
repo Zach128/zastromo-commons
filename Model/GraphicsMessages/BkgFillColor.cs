@@ -8,20 +8,24 @@ using System.Threading.Tasks;
 namespace SelfDestructCommons.Model.GraphicsMessages
 {
     [Serializable]
-    class BkgFillColor : BackgroundCtrlMsg
+    public class BkgFillColor : BackgroundCtrlMsg
     {
         public Color FillColor { get; set; }
-
-        public BkgFillColor()
-            : base(BKG_ACTION.FILL_COLOR)
-        {
-            FillColor = Color.Transparent;
-        }
 
         public BkgFillColor(Color color)
             : base(BKG_ACTION.FILL_COLOR)
         {
             FillColor = color;
+        }
+
+        private BkgFillColor() : base(BKG_ACTION.CLEAR_BKG)
+        {
+            FillColor = Color.Transparent;
+        }
+
+        public static BkgFillColor ClearBkgMessage()
+        {
+            return new BkgFillColor();
         }
 
     }
